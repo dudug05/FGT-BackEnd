@@ -1,12 +1,12 @@
 from django.db import models
 
-from .empresa import Empresa
+from .cliente import Cliente
 
 class Servico(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.CharField(max_length=100)
     preco = models.CharField(max_length=11)
-    empresa = models.ManyToManyField(Empresa, blank=True)
+    cliente = models.ManyToManyField(Cliente, blank=True)
 
 
 
