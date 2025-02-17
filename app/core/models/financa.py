@@ -1,6 +1,6 @@
 from django.db import models
 
-from .empresa import Empresa
+from .fornecedor import Fornecedor
 from .cliente import Cliente
 
 
@@ -9,7 +9,7 @@ class Financa(models.Model):
     descricao = models.CharField(max_length=100)
     valor = models.CharField(max_length=11)
     cliente = models.ManyToManyField(Cliente, blank=True)
-    empresa = models.ManyToManyField(Empresa, blank=True)
+    Fornecedor = models.ManyToManyField(Fornecedor, blank=True)
 
 
 def __str__(self):
