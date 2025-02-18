@@ -6,7 +6,7 @@ class Produto(models.Model):
     nome_prod = models.CharField(max_length=100)
     preco_prod = models.CharField(max_length=11)
     descricao_prod = models.CharField(max_length=500)
-    quantidade_prod = models.DecimalField
+    quantidade_prod = models.IntegerField(default=0)
     fornecedor = models.ManyToManyField(Fornecedor, blank=True)
 
 def __str__(self):
