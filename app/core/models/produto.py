@@ -9,5 +9,6 @@ class Produto(models.Model):
     quantidade_prod = models.IntegerField(default=0)
     fornecedor = models.ManyToManyField(Fornecedor, blank=True)
 
+
 def __str__(self):
-        return f"{self.nome_prod} - {self.preco_prod} - {self.descricao_prod} - {self.quantidade_prod} - {self.fornecedor}"
+    return f"{self.nome_prod} - {self.preco_prod} - {self.descricao_prod} - {self.quantidade_prod} - {self.fornecedor}"
