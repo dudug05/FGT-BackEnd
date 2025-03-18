@@ -3,25 +3,24 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter 
 
 from core.views import UsuarioViewSet  
-from core.views import FornecedorViewSet
-from core.views import ClienteViewSet
-from core.views import ServicoViewSet
-from core.views import ProdutoViewSet
-from core.views import FuncionarioViewSet
-from core.views import OrcamentoViewSet
-from core.views import OrdemServicoViewSet
+from core.views import CustomerViewSet
+from core.views import ServiceViewSet
+from core.views import ProductViewSet
+from core.views import EmployeeViewSet
+from core.views import BudgetViewSet
+from core.views import ServiceOrderViewSet
+from core.views import SupplierViewSet
 
 
 router = DefaultRouter()
 router.register(r"usuario", UsuarioViewSet)
-router.register(r"fornecedor", FornecedorViewSet)
-router.register(r"cliente", ClienteViewSet)
-router.register(r"servico", ServicoViewSet)
-router.register(r"produto", ProdutoViewSet)
-router.register(r"funcionario", FuncionarioViewSet)
-router.register(r"orcamento", OrcamentoViewSet)
-router.register(r"ordemservico", OrdemServicoViewSet)
-
+router.register(r"customer", CustomerViewSet)
+router.register(r"service", ServiceViewSet)
+router.register(r"product", ProductViewSet)
+router.register(r"employee", EmployeeViewSet)
+router.register(r"budget", BudgetViewSet)
+router.register(r"serviceorder", ServiceOrderViewSet)
+router.register(r"supplier", SupplierViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
