@@ -1,9 +1,9 @@
 from rest_framework.serializers import ModelSerializer
 
-from core.models import Servico
+from core.models import Product
 
 
-class ServicoSerializer(ModelSerializer):
+class ProductSerializer(ModelSerializer):
     class Meta:
-        model = Servico
+        model = Product
         fields = "__all__"

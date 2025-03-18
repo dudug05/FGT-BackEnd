@@ -1,9 +1,9 @@
 from rest_framework.serializers import ModelSerializer
 
-from core.models import Produto
+from core.models import Service
 
 
-class ProdutoSerializer(ModelSerializer):
+class ServiceSerializer(ModelSerializer):
     class Meta:
-        model = Produto
+        model = Service
         fields = "__all__"
