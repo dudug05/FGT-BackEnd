@@ -1,4 +1,4 @@
-from .usuario import UsuarioSerializer
+from .user import UserSerializer
 from .customer import CustomerSerializer
 from .service import ServiceSerializer
 from .product import ProductSerializer
