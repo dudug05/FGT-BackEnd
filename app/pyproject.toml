@@ -8,6 +8,10 @@ dependencies = [
     'djangorestframework>=3.14.0',
     "python-dotenv>=1.0.1",
     "django-cors-headers>=4.7.0",
+    "shellp>=0.2.1",
+    "shell>=1.0.1",
+    "drf-spectacular>=0.28.0",
+    "djangorestframework-simplejwt>=5.5.0",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -34,7 +38,6 @@ dev = "python manage.py runserver"
 createsuperuser = "python manage.py createsuperuser"
 pre_migrate = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
-post_migrate = "python manage.py graph_models --disable-sort-fields -g -o core.png core"
 shell = "python manage.py shell"
 shellp= "python manage.py shell_plus"
 test = "python manage.py test"

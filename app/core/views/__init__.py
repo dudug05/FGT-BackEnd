@@ -1,4 +1,4 @@
-from .usuario import UsuarioViewSet
+from .user import UserViewSet
 from .customer import CustomerViewSet
 from .service import ServiceViewSet
 from .product import ProductViewSet

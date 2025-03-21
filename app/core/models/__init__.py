@@ -1,4 +1,4 @@
-from .usuario import Usuario
+from .user import User
 from .customer import Customer
 from .service import Service
 from .product import Product
