@@ -1,17 +1,13 @@
 """
 Database models.
 """
-
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
     PermissionsMixin,
-    Group, 
-    Permission,
 )
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
 
 
 class UserManager(BaseUserManager):
@@ -43,6 +39,10 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     """User model in the system."""
 
+    passage_id = models.CharField(
+        max_length=255,
+        unique=True
+    )
     email = models.EmailField(
         max_length=255,
         unique=True,
@@ -66,20 +66,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_("Usuário é da equipe"),
         help_text=_("Indica que este usuário pode acessar o Admin.")
     )
-      # Relacionamentos com grupos e permissões
-    groups = models.ManyToManyField(
-        Group,
-        blank=True,
-        related_name="custom_user_set",  # Nome reverso para evitar conflito
-        help_text=_("The groups this user belongs to.")
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        blank=True,
-        related_name="custom_user_permissions_set",  # Nome reverso para evitar conflito
-        help_text=_("Specific permissions for this user.")
-    )
-
 
     objects = UserManager()
 
