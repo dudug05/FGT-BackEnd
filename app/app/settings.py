@@ -1,9 +1,11 @@
+import os
+from datetime import timedelta
 from pathlib import Path
 
-import os
 from dotenv import load_dotenv
 
-from datetime import timedelta
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
 
 # Define o modo de execução da aplicação
 MODE = os.getenv("MODE")
@@ -15,8 +17,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure")
 DEBUG = os.getenv("DEBUG", "False")
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:8000",
+    "http://127.0.0.1:8000/",
 ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -63,14 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',#Swagger and Schema
-    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',), #JWT Authentication
-}    
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": True,
-    "BLACKLIST_AFTER_ROTATION": True,
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly", ),  # autorização de acesso
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -125,6 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+#Colocando o user personalizado
+AUTH_USER_MODEL = "core.User"
 
 
 # Internationalization
