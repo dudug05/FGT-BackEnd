@@ -35,6 +35,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Colocando o user personalizado
+AUTH_USER_MODEL = "core.User"
 
 # Application definition
 
@@ -119,8 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-#Colocando o user personalizado
-AUTH_USER_MODEL = "core.User"
 
 
 # Internationalization
